@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface AGTMoney : NSObject
+@property (copy, readonly) NSString *currency;
++ (instancetype)dollarWithAmount:(NSUInteger)amount;
++ (instancetype)euroWithAmount:(NSUInteger)amount;
 
-- (instancetype)initWithAmount:(NSUInteger)amount;
+
+- (instancetype)initWithAmount:(NSUInteger)amount
+                      currency:(NSString*)currency;
 - (AGTMoney *)times:(NSUInteger)multiplier;
 
 @end

@@ -12,16 +12,29 @@
 
 @implementation AGTMoney
 
+
+
++ (instancetype)dollarWithAmount:(NSUInteger)amount {
+    AGTMoney *dollar = [[AGTMoney alloc] initWithAmount:amount currency:@"USD"];
+    return dollar;
+}
+
++ (instancetype)euroWithAmount:(NSUInteger)amount {
+    AGTMoney *euro = [[AGTMoney alloc] initWithAmount:amount currency:@"EUR"];
+    return euro;
+}
+
 - (instancetype)initWithAmount:(NSUInteger)amount
-{
+                      currency:(NSString*)currency{
     if (self = [super init]) {
         _amount = amount;
+        _currency = [currency copy];
     }
     return self;
 }
 
 - (AGTMoney *)times:(NSUInteger)multiplier{
-    AGTMoney *product = [[AGTMoney alloc] initWithAmount:self.amount * multiplier];
+    AGTMoney *product = [[AGTMoney alloc] initWithAmount:self.amount * multiplier currency:self.currency];
     return product;
 }
 
