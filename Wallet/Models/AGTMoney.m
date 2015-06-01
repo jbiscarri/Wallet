@@ -7,12 +7,13 @@
 //
 
 #import "AGTMoney.h"
-#import "AGTMoneyPrivate.h"
-#import "NSObject+GNUStep.h"
+
+
+@interface AGTMoney()
+@property (nonatomic) NSUInteger amount;
+@end
 
 @implementation AGTMoney
-
-
 
 + (instancetype)dollarWithAmount:(NSUInteger)amount {
     AGTMoney *dollar = [[AGTMoney alloc] initWithAmount:amount currency:@"USD"];
