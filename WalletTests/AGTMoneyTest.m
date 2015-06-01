@@ -27,7 +27,7 @@
 }
 
 - (void)testThatInitRaisesException {
-    XCTAssertThrows([[AGTMoney alloc] initWithAmount:3]);
+    XCTAssertNoThrow([[AGTMoney alloc] initWithAmount:3]);
 }
 
 @end

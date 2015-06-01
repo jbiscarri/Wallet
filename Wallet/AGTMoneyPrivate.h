@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Biscarri. All rights reserved.
 //
 
-#ifndef Wallet_AGTMoneyPrivate_h
-#define Wallet_AGTMoneyPrivate_h
+#import "AGTMoney.h" 
 
-
-#endif
+@interface AGTMoney()
+@property (nonatomic) NSUInteger amount;
+@end

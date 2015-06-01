@@ -7,16 +7,26 @@
 //
 
 #import "AGTMoney.h"
+#import "AGTMoneyPrivate.h"
 #import "NSObject+GNUStep.h"
 
 @implementation AGTMoney
 
-- (instancetype)initWithAmount:(NSUInteger)amount {
-    return [self subclassResponsibility:_cmd];
+- (instancetype)initWithAmount:(NSUInteger)amount
+{
+    if (self = [super init]) {
+        _amount = amount;
+    }
+    return self;
 }
 
-- (AGTMoney *)times:(NSUInteger)multiplier {
-    return [self subclassResponsibility:_cmd];
+- (AGTMoney *)times:(NSUInteger)multiplier{
+    AGTMoney *product = [[AGTMoney alloc] initWithAmount:self.amount * multiplier];
+    return product;
+}
+
+- (BOOL)isEqual:(id)object {
+    return [self amount] == [object amount];
 }
 
 @end

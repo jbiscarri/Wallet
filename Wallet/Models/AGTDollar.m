@@ -7,35 +7,8 @@
 //
 
 #import "AGTDollar.h"
-
-
-@interface AGTDollar()
-
-@property (nonatomic) NSUInteger amount;
-
-@end
-
-
-
+#import "AGTMoneyPrivate.h"
 
 @implementation AGTDollar
-
-- (instancetype)initWithAmount:(NSUInteger)amount
-{
-    self = [super init];
-    if (self) {
-        _amount = amount;
-    }
-    return self;
-}
-
-- (AGTMoney *)times:(NSUInteger)multiplier{
-    AGTDollar *product = [[AGTDollar alloc] initWithAmount:_amount * multiplier];
-    return product;
-}
-
-- (BOOL)isEqual:(id)object {
-    return [self amount] == [object amount];
-}
 
 @end
