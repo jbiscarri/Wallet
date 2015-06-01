@@ -13,7 +13,17 @@
 		B85C73571B1CF39100517E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85C73551B1CF39100517E5E /* Main.storyboard */; };
 		B85C73591B1CF39100517E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85C73581B1CF39100517E5E /* Images.xcassets */; };
 		B85C735C1B1CF39100517E5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B85C735A1B1CF39100517E5E /* LaunchScreen.xib */; };
-		B85C73681B1CF39100517E5E /* WalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73671B1CF39100517E5E /* WalletTests.m */; };
+		B85C73721B1CF55800517E5E /* AGTEuroTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73711B1CF55800517E5E /* AGTEuroTest.m */; };
+		B85C73761B1CF66900517E5E /* AGTEuro.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73751B1CF66900517E5E /* AGTEuro.m */; };
+		B85C73771B1CF67100517E5E /* AGTEuro.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73751B1CF66900517E5E /* AGTEuro.m */; };
+		B85C73791B1D048000517E5E /* AGTDollarTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73781B1D048000517E5E /* AGTDollarTest.m */; };
+		B85C737C1B1D052400517E5E /* AGTDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C737B1B1D052400517E5E /* AGTDollar.m */; };
+		B85C737D1B1D052400517E5E /* AGTDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C737B1B1D052400517E5E /* AGTDollar.m */; };
+		B85C73801B1D06D400517E5E /* AGTMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C737F1B1D06D400517E5E /* AGTMoney.m */; };
+		B85C73811B1D06D400517E5E /* AGTMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C737F1B1D06D400517E5E /* AGTMoney.m */; };
+		B85C73841B1D090200517E5E /* NSObject+GNUStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73831B1D090200517E5E /* NSObject+GNUStep.m */; };
+		B85C73851B1D090200517E5E /* NSObject+GNUStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73831B1D090200517E5E /* NSObject+GNUStep.m */; };
+		B85C73881B1D0B2100517E5E /* AGTMoneyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +49,17 @@
 		B85C735B1B1CF39100517E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B85C73611B1CF39100517E5E /* WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85C73661B1CF39100517E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B85C73671B1CF39100517E5E /* WalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletTests.m; sourceTree = "<group>"; };
+		B85C73711B1CF55800517E5E /* AGTEuroTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTEuroTest.m; sourceTree = "<group>"; };
+		B85C73741B1CF66900517E5E /* AGTEuro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTEuro.h; path = Models/AGTEuro.h; sourceTree = "<group>"; };
+		B85C73751B1CF66900517E5E /* AGTEuro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTEuro.m; path = Models/AGTEuro.m; sourceTree = "<group>"; };
+		B85C73781B1D048000517E5E /* AGTDollarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTDollarTest.m; sourceTree = "<group>"; };
+		B85C737A1B1D052400517E5E /* AGTDollar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTDollar.h; path = Models/AGTDollar.h; sourceTree = "<group>"; };
+		B85C737B1B1D052400517E5E /* AGTDollar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTDollar.m; path = Models/AGTDollar.m; sourceTree = "<group>"; };
+		B85C737E1B1D06D400517E5E /* AGTMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTMoney.h; path = Models/AGTMoney.h; sourceTree = "<group>"; };
+		B85C737F1B1D06D400517E5E /* AGTMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTMoney.m; path = Models/AGTMoney.m; sourceTree = "<group>"; };
+		B85C73821B1D090200517E5E /* NSObject+GNUStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+GNUStep.h"; path = "Categories/NSObject+GNUStep.h"; sourceTree = "<group>"; };
+		B85C73831B1D090200517E5E /* NSObject+GNUStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+GNUStep.m"; path = "Categories/NSObject+GNUStep.m"; sourceTree = "<group>"; };
+		B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTMoneyTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +101,7 @@
 		B85C734A1B1CF39100517E5E /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				B85C73731B1CF65400517E5E /* Models */,
 				B85C734F1B1CF39100517E5E /* AppDelegate.h */,
 				B85C73501B1CF39100517E5E /* AppDelegate.m */,
 				B85C73521B1CF39100517E5E /* ViewController.h */,
@@ -89,6 +110,7 @@
 				B85C73581B1CF39100517E5E /* Images.xcassets */,
 				B85C735A1B1CF39100517E5E /* LaunchScreen.xib */,
 				B85C734B1B1CF39100517E5E /* Supporting Files */,
+				B85C73861B1D090F00517E5E /* Categories */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -105,8 +127,10 @@
 		B85C73641B1CF39100517E5E /* WalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				B85C73671B1CF39100517E5E /* WalletTests.m */,
 				B85C73651B1CF39100517E5E /* Supporting Files */,
+				B85C73711B1CF55800517E5E /* AGTEuroTest.m */,
+				B85C73781B1D048000517E5E /* AGTDollarTest.m */,
+				B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */,
 			);
 			path = WalletTests;
 			sourceTree = "<group>";
@@ -117,6 +141,28 @@
 				B85C73661B1CF39100517E5E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B85C73731B1CF65400517E5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B85C73741B1CF66900517E5E /* AGTEuro.h */,
+				B85C73751B1CF66900517E5E /* AGTEuro.m */,
+				B85C737A1B1D052400517E5E /* AGTDollar.h */,
+				B85C737B1B1D052400517E5E /* AGTDollar.m */,
+				B85C737E1B1D06D400517E5E /* AGTMoney.h */,
+				B85C737F1B1D06D400517E5E /* AGTMoney.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B85C73861B1D090F00517E5E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B85C73821B1D090200517E5E /* NSObject+GNUStep.h */,
+				B85C73831B1D090200517E5E /* NSObject+GNUStep.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85C737C1B1D052400517E5E /* AGTDollar.m in Sources */,
+				B85C73841B1D090200517E5E /* NSObject+GNUStep.m in Sources */,
 				B85C73541B1CF39100517E5E /* ViewController.m in Sources */,
 				B85C73511B1CF39100517E5E /* AppDelegate.m in Sources */,
+				B85C73801B1D06D400517E5E /* AGTMoney.m in Sources */,
 				B85C734E1B1CF39100517E5E /* main.m in Sources */,
+				B85C73761B1CF66900517E5E /* AGTEuro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B85C73681B1CF39100517E5E /* WalletTests.m in Sources */,
+				B85C73811B1D06D400517E5E /* AGTMoney.m in Sources */,
+				B85C737D1B1D052400517E5E /* AGTDollar.m in Sources */,
+				B85C73851B1D090200517E5E /* NSObject+GNUStep.m in Sources */,
+				B85C73791B1D048000517E5E /* AGTDollarTest.m in Sources */,
+				B85C73881B1D0B2100517E5E /* AGTMoneyTest.m in Sources */,
+				B85C73721B1CF55800517E5E /* AGTEuroTest.m in Sources */,
+				B85C73771B1CF67100517E5E /* AGTEuro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +472,7 @@
 				B85C736D1B1CF39100517E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B85C736E1B1CF39100517E5E /* Build configuration list for PBXNativeTarget "WalletTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +481,7 @@
 				B85C73701B1CF39100517E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
