@@ -16,6 +16,10 @@
 		B85C73801B1D06D400517E5E /* AGTMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C737F1B1D06D400517E5E /* AGTMoney.m */; };
 		B85C73811B1D06D400517E5E /* AGTMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C737F1B1D06D400517E5E /* AGTMoney.m */; };
 		B85C73881B1D0B2100517E5E /* AGTMoneyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */; };
+		B8BA678A1B1F7F2700CCF294 /* AGTBrokerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA67891B1F7F2700CCF294 /* AGTBrokerTest.m */; };
+		B8BA678D1B1F800A00CCF294 /* AGTBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA678C1B1F800A00CCF294 /* AGTBroker.m */; };
+		B8BA678E1B1F800A00CCF294 /* AGTBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA678C1B1F800A00CCF294 /* AGTBroker.m */; };
+		B8BA67901B1FAC5C00CCF294 /* AGTWalletTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA678F1B1FAC5C00CCF294 /* AGTWalletTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		B85C737E1B1D06D400517E5E /* AGTMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTMoney.h; path = Models/AGTMoney.h; sourceTree = "<group>"; };
 		B85C737F1B1D06D400517E5E /* AGTMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTMoney.m; path = Models/AGTMoney.m; sourceTree = "<group>"; };
 		B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTMoneyTest.m; sourceTree = "<group>"; };
+		B8BA67891B1F7F2700CCF294 /* AGTBrokerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTBrokerTest.m; sourceTree = "<group>"; };
+		B8BA678B1B1F800A00CCF294 /* AGTBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTBroker.h; path = Models/AGTBroker.h; sourceTree = "<group>"; };
+		B8BA678C1B1F800A00CCF294 /* AGTBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTBroker.m; path = Models/AGTBroker.m; sourceTree = "<group>"; };
+		B8BA678F1B1FAC5C00CCF294 /* AGTWalletTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWalletTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,8 @@
 			children = (
 				B85C73651B1CF39100517E5E /* Supporting Files */,
 				B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */,
+				B8BA67891B1F7F2700CCF294 /* AGTBrokerTest.m */,
+				B8BA678F1B1FAC5C00CCF294 /* AGTWalletTest.m */,
 			);
 			path = WalletTests;
 			sourceTree = "<group>";
@@ -129,6 +139,8 @@
 			children = (
 				B85C737E1B1D06D400517E5E /* AGTMoney.h */,
 				B85C737F1B1D06D400517E5E /* AGTMoney.m */,
+				B8BA678B1B1F800A00CCF294 /* AGTBroker.h */,
+				B8BA678C1B1F800A00CCF294 /* AGTBroker.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -234,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85C73541B1CF39100517E5E /* ViewController.m in Sources */,
+				B8BA678D1B1F800A00CCF294 /* AGTBroker.m in Sources */,
 				B85C73511B1CF39100517E5E /* AppDelegate.m in Sources */,
 				B85C73801B1D06D400517E5E /* AGTMoney.m in Sources */,
 				B85C734E1B1CF39100517E5E /* main.m in Sources */,
@@ -246,6 +259,9 @@
 			files = (
 				B85C73811B1D06D400517E5E /* AGTMoney.m in Sources */,
 				B85C73881B1D0B2100517E5E /* AGTMoneyTest.m in Sources */,
+				B8BA678A1B1F7F2700CCF294 /* AGTBrokerTest.m in Sources */,
+				B8BA678E1B1F800A00CCF294 /* AGTBroker.m in Sources */,
+				B8BA67901B1FAC5C00CCF294 /* AGTWalletTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

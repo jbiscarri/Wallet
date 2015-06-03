@@ -10,7 +10,7 @@
 
 
 @interface AGTMoney()
-@property (nonatomic) NSUInteger amount;
+@property (nonatomic, strong) NSNumber* amount;
 @end
 
 @implementation AGTMoney
@@ -28,19 +28,36 @@
 - (instancetype)initWithAmount:(NSUInteger)amount
                       currency:(NSString*)currency{
     if (self = [super init]) {
-        _amount = amount;
+        _amount = @(amount);
         _currency = [currency copy];
     }
     return self;
 }
 
 - (AGTMoney *)times:(NSUInteger)multiplier{
-    AGTMoney *product = [[AGTMoney alloc] initWithAmount:self.amount * multiplier currency:self.currency];
+    AGTMoney *product = [[AGTMoney alloc] initWithAmount:[self.amount integerValue] * multiplier currency:self.currency];
     return product;
 }
 
 - (BOOL)isEqual:(id)object {
-    return [self amount] == [object amount];
+    return [self amount] == [object amount] &&
+    [self.currency isEqual:[object currency]];
+}
+
+- (AGTMoney *)plus:(AGTMoney *)other {
+    AGTMoney *total = [[AGTMoney alloc] initWithAmount:([self.amount integerValue] + [other.amount integerValue])
+                                              currency:_currency];
+    return total;
+}
+
+
+#pragma mark -Overwritter
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@ %@%ld>", self.class, self.currency, [self.amount integerValue]];
+}
+
+- (NSUInteger)hash {
+    return (NSUInteger)[self.amount integerValue];
 }
 
 @end
