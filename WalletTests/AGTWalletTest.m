@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "AGTMoney.h"
 #import "AGTBroker.h"
+#import "AGTWallet.h"
 
 @interface AGTWalletTest : XCTestCase
 
@@ -28,9 +29,10 @@
 }
 
 //eur40 = usd30 = usd100 2:1
+
 - (void)testAdditionWithReduction {
     AGTBroker *broker = [AGTBroker new];
-    [broker addRate:2 fromCurrency:@"USD" toCurrency:@"EUR"];
+    [broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
     
     AGTWallet *wallet = [[AGTWallet alloc] initWithAmount:40 currency:@"EUR"];
     [wallet plus:[AGTMoney dollarWithAmount:20]];

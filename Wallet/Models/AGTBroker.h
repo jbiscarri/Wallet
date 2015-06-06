@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-@class AGTMoney;
+#import "AGTMoney.h"
 
 @interface AGTBroker : NSObject
-- (AGTMoney*)reduce:(AGTMoney*)money toCurrency:(NSString*)currency;
+@property (nonatomic, strong) NSMutableDictionary *rates;
+
+- (AGTMoney *)reduce:(id <AGTMoney>)money toCurrency:(NSString*)currency;
 - (void)addRate:(NSInteger)rate
    fromCurrency:(NSString *)fromCurrency
      toCurrency:(NSString *)toCurrency;
