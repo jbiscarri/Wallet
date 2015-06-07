@@ -16,10 +16,12 @@
 		B85C73811B1D06D400517E5E /* AGTMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C737F1B1D06D400517E5E /* AGTMoney.m */; };
 		B85C73881B1D0B2100517E5E /* AGTMoneyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */; };
 		B867A4BB1B20C34B0095F0D7 /* AGTWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4BA1B20C34B0095F0D7 /* AGTWallet.m */; };
-		B867A4BF1B20D3000095F0D7 /* AGTWalletTempTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4BE1B20D3000095F0D7 /* AGTWalletTempTableViewController.m */; };
 		B867A4C11B20D3200095F0D7 /* AGTWalletTableTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4C01B20D3200095F0D7 /* AGTWalletTableTest.m */; };
 		B867A4C41B22E7580095F0D7 /* AGTWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4C31B22E7580095F0D7 /* AGTWalletTableViewController.m */; };
 		B867A4C81B22F2C60095F0D7 /* MoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4C71B22F2C60095F0D7 /* MoneyTableViewCell.m */; };
+		B867A4CB1B23C04E0095F0D7 /* AddMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4CA1B23C04E0095F0D7 /* AddMoneyViewController.m */; };
+		B867A4D21B23C3170095F0D7 /* ASDepthModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4CF1B23C3170095F0D7 /* ASDepthModalViewController.m */; };
+		B867A4D31B23C3170095F0D7 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = B867A4D11B23C3170095F0D7 /* UIImage+Blur.m */; };
 		B8BA678A1B1F7F2700CCF294 /* AGTBrokerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA67891B1F7F2700CCF294 /* AGTBrokerTest.m */; };
 		B8BA678D1B1F800A00CCF294 /* AGTBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA678C1B1F800A00CCF294 /* AGTBroker.m */; };
 		B8BA678E1B1F800A00CCF294 /* AGTBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BA678C1B1F800A00CCF294 /* AGTBroker.m */; };
@@ -52,13 +54,17 @@
 		B85C73871B1D0B2100517E5E /* AGTMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTMoneyTest.m; sourceTree = "<group>"; };
 		B867A4B91B20C34B0095F0D7 /* AGTWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTWallet.h; path = Models/AGTWallet.h; sourceTree = "<group>"; };
 		B867A4BA1B20C34B0095F0D7 /* AGTWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTWallet.m; path = Models/AGTWallet.m; sourceTree = "<group>"; };
-		B867A4BD1B20D3000095F0D7 /* AGTWalletTempTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTWalletTempTableViewController.h; path = Controllers/AGTWalletTempTableViewController.h; sourceTree = "<group>"; };
-		B867A4BE1B20D3000095F0D7 /* AGTWalletTempTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTWalletTempTableViewController.m; path = Controllers/AGTWalletTempTableViewController.m; sourceTree = "<group>"; };
 		B867A4C01B20D3200095F0D7 /* AGTWalletTableTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWalletTableTest.m; sourceTree = "<group>"; };
 		B867A4C21B22E7580095F0D7 /* AGTWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTWalletTableViewController.h; path = Controllers/AGTWalletTableViewController.h; sourceTree = "<group>"; };
 		B867A4C31B22E7580095F0D7 /* AGTWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTWalletTableViewController.m; path = Controllers/AGTWalletTableViewController.m; sourceTree = "<group>"; };
 		B867A4C61B22F2C60095F0D7 /* MoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoneyTableViewCell.h; path = Views/MoneyTableViewCell.h; sourceTree = "<group>"; };
 		B867A4C71B22F2C60095F0D7 /* MoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoneyTableViewCell.m; path = Views/MoneyTableViewCell.m; sourceTree = "<group>"; };
+		B867A4C91B23C04E0095F0D7 /* AddMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddMoneyViewController.h; path = Controllers/AddMoneyViewController.h; sourceTree = "<group>"; };
+		B867A4CA1B23C04E0095F0D7 /* AddMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddMoneyViewController.m; path = Controllers/AddMoneyViewController.m; sourceTree = "<group>"; };
+		B867A4CE1B23C3170095F0D7 /* ASDepthModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDepthModalViewController.h; sourceTree = "<group>"; };
+		B867A4CF1B23C3170095F0D7 /* ASDepthModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDepthModalViewController.m; sourceTree = "<group>"; };
+		B867A4D01B23C3170095F0D7 /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
+		B867A4D11B23C3170095F0D7 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
 		B8BA67891B1F7F2700CCF294 /* AGTBrokerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTBrokerTest.m; sourceTree = "<group>"; };
 		B8BA678B1B1F800A00CCF294 /* AGTBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AGTBroker.h; path = Models/AGTBroker.h; sourceTree = "<group>"; };
 		B8BA678C1B1F800A00CCF294 /* AGTBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AGTBroker.m; path = Models/AGTBroker.m; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		B85C734A1B1CF39100517E5E /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				B867A4CC1B23C3170095F0D7 /* Vendors */,
 				B867A4C51B22F29E0095F0D7 /* Views */,
 				B867A4BC1B20CE710095F0D7 /* Controllers */,
 				B85C73731B1CF65400517E5E /* Models */,
@@ -162,10 +169,10 @@
 		B867A4BC1B20CE710095F0D7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B867A4BD1B20D3000095F0D7 /* AGTWalletTempTableViewController.h */,
-				B867A4BE1B20D3000095F0D7 /* AGTWalletTempTableViewController.m */,
 				B867A4C21B22E7580095F0D7 /* AGTWalletTableViewController.h */,
 				B867A4C31B22E7580095F0D7 /* AGTWalletTableViewController.m */,
+				B867A4C91B23C04E0095F0D7 /* AddMoneyViewController.h */,
+				B867A4CA1B23C04E0095F0D7 /* AddMoneyViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +184,25 @@
 				B867A4C71B22F2C60095F0D7 /* MoneyTableViewCell.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		B867A4CC1B23C3170095F0D7 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				B867A4CD1B23C3170095F0D7 /* ASDepthModal */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		B867A4CD1B23C3170095F0D7 /* ASDepthModal */ = {
+			isa = PBXGroup;
+			children = (
+				B867A4CE1B23C3170095F0D7 /* ASDepthModalViewController.h */,
+				B867A4CF1B23C3170095F0D7 /* ASDepthModalViewController.m */,
+				B867A4D01B23C3170095F0D7 /* UIImage+Blur.h */,
+				B867A4D11B23C3170095F0D7 /* UIImage+Blur.m */,
+			);
+			path = ASDepthModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,14 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B867A4D21B23C3170095F0D7 /* ASDepthModalViewController.m in Sources */,
 				B8BA678D1B1F800A00CCF294 /* AGTBroker.m in Sources */,
-				B867A4BF1B20D3000095F0D7 /* AGTWalletTempTableViewController.m in Sources */,
 				B867A4C81B22F2C60095F0D7 /* MoneyTableViewCell.m in Sources */,
 				B85C73511B1CF39100517E5E /* AppDelegate.m in Sources */,
 				B867A4BB1B20C34B0095F0D7 /* AGTWallet.m in Sources */,
 				B867A4C41B22E7580095F0D7 /* AGTWalletTableViewController.m in Sources */,
+				B867A4CB1B23C04E0095F0D7 /* AddMoneyViewController.m in Sources */,
 				B85C73801B1D06D400517E5E /* AGTMoney.m in Sources */,
 				B85C734E1B1CF39100517E5E /* main.m in Sources */,
+				B867A4D31B23C3170095F0D7 /* UIImage+Blur.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

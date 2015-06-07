@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddMoneyViewController.h"
 
-@interface AGTWalletTableViewController : UITableViewController
+@class AGTWallet;
 
+@interface AGTWalletTableViewController : UITableViewController<AddMoneyViewControllerDelegate>
+- (instancetype)initWithStyle:(UITableViewStyle)style wallet:(AGTWallet*)wallet;
+- (IBAction)addTouchUpInside:(id)sender;
 @end

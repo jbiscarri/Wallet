@@ -10,5 +10,6 @@
 
 @interface MoneyTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *cellTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cellTotalText;
 
 @end

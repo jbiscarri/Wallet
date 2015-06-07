@@ -14,5 +14,10 @@
 
 - (NSArray *)moneysForSection:(NSUInteger)section;
 - (NSArray*)getCurrenciesInMyWallet;
+- (id<AGTMoney>)reduceForSection:(NSUInteger)section withBroker:(AGTBroker*)broker;
+- (void)takeMoney:(AGTMoney *)other;
+- (id<AGTMoney>)addMoney:(AGTMoney *)other;
+
+
 
 @end

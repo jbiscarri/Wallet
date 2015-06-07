@@ -14,6 +14,15 @@
 @end
 
 @implementation AGTWallet
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _moneys = [@[] mutableCopy];
+    }
+    return self;
+}
 - (id)initWithAmount:(NSUInteger)amount
                       currency:(NSString*)currency {
     if (self = [super init]) {
@@ -28,6 +37,11 @@
     return self;
 }
 
+- (NSUInteger)count {
+    return self.moneys.count;
+}
+
+
 - (id<AGTMoney>)times:(NSUInteger)multiplier {
     NSMutableArray *newMoneys = [NSMutableArray arrayWithCapacity:self.moneys.count];
     for (id<AGTMoney>  each in self.moneys) {
@@ -39,14 +53,32 @@
 }
 
 
+#pragma mark - Methods used for UITableViewDatasource
+
+//Used to calculate global amount
 - (id<AGTMoney>)reduceToCurrency:(NSString*)currency withBroker:(AGTBroker*)broker {
     AGTMoney *result = [[AGTMoney alloc] initWithAmount:0 currency:currency];
-    for (AGTMoney *  each in self.moneys) {
+    for (AGTMoney *each in self.moneys) {
         result = [result plus:[each reduceToCurrency:currency withBroker:broker]];
     }
     return result;
 }
 
+//Used to calculate amount for section
+- (id<AGTMoney>)reduceForSection:(NSUInteger)section withBroker:(AGTBroker*)broker {
+    NSArray *currencies = [self getCurrenciesInMyWallet];
+    NSString *currency = currencies[section];
+    NSArray *moneys = [self moneysForCurrency:currency];
+    AGTMoney *result = [[AGTMoney alloc] initWithAmount:0 currency:currency];
+
+    for (AGTMoney *each in moneys) {
+        result = [result plus:[each reduceToCurrency:currency withBroker:broker]];
+
+    }
+    return result;
+}
+
+//Used to get every section elements
 - (NSArray *)moneysForSection:(NSUInteger)section
 {
     NSArray *currencies = [self getCurrenciesInMyWallet];
@@ -68,6 +100,7 @@
     return moneys;
 }
 
+//Used to get number of section. It returns all different currencies
 - (NSArray*)getCurrenciesInMyWallet
 {
     NSMutableArray *currencies = [NSMutableArray array];
@@ -83,6 +116,17 @@
         return [currency1 compare:currency2];
     }] mutableCopy];
     return currencies;
+}
+
+#pragma mark - Manage Wallet Money
+
+- (id<AGTMoney>)addMoney:(AGTMoney *)other {
+    return [self plus:other];
+}
+
+
+- (void)takeMoney:(AGTMoney *)other {
+    [self.moneys removeObjectIdenticalTo:other];
 }
 
 @end

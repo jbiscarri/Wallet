@@ -8,33 +8,45 @@
 
 #import "AGTWalletTableViewController.h"
 #import "AGTWallet.h"
+#import "MoneyTableViewCell.h"
+#import "AGTBroker.h"
+#import "ASDepthModalViewController.h"
+
+static NSString *const reuseIdentifier = @"MoneyTableViewCell";
+
 
 @interface AGTWalletTableViewController ()
 @property (nonatomic, strong) AGTWallet *wallet;
+@property (nonatomic, strong) AGTBroker *broker;
+@property (nonatomic, strong) AddMoneyViewController *addMoneyViewController;
 @end
 
 @implementation AGTWalletTableViewController
 
+- (instancetype)initWithStyle:(UITableViewStyle)style wallet:(AGTWallet*)wallet {
+    self = [super initWithStyle:style];
+    if (self) {
+        _wallet = wallet;
+        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
+
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+
 #pragma mark - Table view data source
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSArray *currencies = [self.wallet getCurrenciesInMyWallet];
-    if (currencies.count < section)
+    if (currencies.count > section)
         return currencies[section];
     else
         return @"Total";
@@ -49,58 +61,110 @@
     return [self.wallet moneysForSection:section].count + 1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    MoneyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    cell.cellTotalText.hidden = YES;
+    AGTMoney *money;
+    NSArray *currencies = [self.wallet getCurrenciesInMyWallet];
+    if (currencies.count > indexPath.section){
+        NSArray *moneys = [self.wallet moneysForSection:indexPath.section];
+        if (indexPath.row < moneys.count)
+            money = moneys[indexPath.row];
+        else{
+            money = [self.wallet reduceForSection:indexPath.section withBroker:self.broker];
+            cell.cellTotalText.hidden = NO;
+            cell.cellTotalText.text = [NSString stringWithFormat:@"TOTAL (%@):", currencies[indexPath.section]];
+        }
+    }else{
+        money = [self.wallet reduceToCurrency:@"EUR" withBroker:self.broker];
+        cell.cellTotalText.hidden = NO;
+        cell.cellTotalText.text = @"TOTAL (EUR):";
+    }
+    cell.cellTitleLabel.text = [NSString stringWithFormat:@"%ld", (long)[money.amount integerValue]];
     return cell;
 }
-*/
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    NSArray *currencies = [self.wallet getCurrenciesInMyWallet];
+    if (currencies.count > indexPath.section){
+        NSArray *moneys = [self.wallet moneysForSection:indexPath.section];
+        if (indexPath.row < moneys.count)
+            return YES;
+        else
+            return NO;
+    }else
+        return NO;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        MoneyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+        cell.cellTotalText.hidden = YES;
+        AGTMoney *money;
+        NSArray *currencies = [self.wallet getCurrenciesInMyWallet];
+        if (currencies.count > indexPath.section){
+            NSArray *moneys = [self.wallet moneysForSection:indexPath.section];
+            if (indexPath.row < moneys.count)
+                money = moneys[indexPath.row];
+        }
+        if (money != nil){
+            [self.wallet takeMoney:money];
+            [tableView reloadData];
+        }
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+#pragma mark - Lazy load
+- (AGTWallet *)wallet
+{
+    if (_wallet == nil){
+        _wallet = [[AGTWallet alloc] init];
+    }
+    return _wallet;
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (AGTBroker *)broker
+{
+    if (_broker == nil){
+        _broker = [[AGTBroker alloc] init];
+        [_broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
+
+    }
+    return _broker;
 }
-*/
 
-/*
-#pragma mark - Navigation
+#pragma mark - Actions
+- (IBAction)addTouchUpInside:(id)sender {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+    self.addMoneyViewController = [storyBoard instantiateViewControllerWithIdentifier:@"AddMoneyViewController"];
+    self.addMoneyViewController.view.frame = CGRectMake(0, 0, 280, 150);
+    self.addMoneyViewController.view.layer.cornerRadius = 5;
+    self.addMoneyViewController.view.layer.masksToBounds = YES;
+    self.addMoneyViewController.delegate = self;
+    [ASDepthModalViewController presentView:self.addMoneyViewController.view];
+    
 }
-*/
 
+#pragma mark - AddMoneyViewControllerDelegate
+- (void)addMoneyViewControllerAddedAmount:(NSInteger)amount currency:(NSString *)currency
+{
+    if ([currency isEqualToString:@"EUR"])
+    {
+        [self.wallet plus:[AGTMoney euroWithAmount:amount]];
+    }
+    else if ([currency isEqualToString:@"USD"])
+    {
+        [self.wallet plus:[AGTMoney dollarWithAmount:amount]];
+    }
+    [self.tableView reloadData];
+}
 @end

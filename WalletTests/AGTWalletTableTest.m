@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "AGTWalletTempTableViewController.h"
+//#import "AGTWalletTempTableViewController.h"
+#import "AGTWalletTableViewController.h"
 #import "AGTWallet.h"
 
 @interface AGTWalletTableTest : XCTestCase
 
-@property (nonatomic, strong) AGTWalletTempTableViewController *walletVc;
+@property (nonatomic, strong) AGTWalletTableViewController *walletVc;
 @property (nonatomic, strong) AGTWallet *wallet;
 
 @end
@@ -22,23 +23,35 @@
 
 - (void)setUp {
     [super setUp];
-    self.wallet = [[AGTWallet alloc] initWithAmount:1 currency:@"USD"];
-    [self.wallet plus:[AGTMoney euroWithAmount:1]];
-    self.walletVc = [[AGTWalletTempTableViewController alloc] initWithModel:self.wallet];
+    self.wallet = [[AGTWallet alloc] init];
+    self.walletVc = [[AGTWalletTableViewController alloc] initWithStyle:UITableViewStylePlain
+                                                                 wallet:self.wallet];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    self.wallet = nil;
+    self.walletVc = nil;
 }
 
-- (void)testThatTableHasOneSection {
+- (void)testThatTableHasSectionNumberEqualToCurrenciesAddingOne {
+    [self.wallet addMoney:[AGTMoney dollarWithAmount:1]];
     NSUInteger sections = [self.walletVc numberOfSectionsInTableView:nil];
-    XCTAssertEqual(sections, 1, @"There can only be one");
+    XCTAssertEqual(sections, 2, @"It should return 2 sections: USD and Total");
+    [self.wallet addMoney:[AGTMoney euroWithAmount:1]];
+    sections = [self.walletVc numberOfSectionsInTableView:nil];
+    XCTAssertEqual(sections, 3, @"It should return 2 sections: 2xUSD and Total");
+
 }
 
-- (void)testThatNumberOfCellsIsNumberOfMoneysPlusOne {
-    XCTAssertEqual(self.wallet.count + 1, [self.walletVc tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys plus 1");
+- (void)testThatNumberOfCellsForSectionIsNumberOfMoneysPlusOne {
+    [self.wallet addMoney:[AGTMoney dollarWithAmount:1]];
+    AGTMoney *aMoney = [AGTMoney dollarWithAmount:1];
+    [self.wallet addMoney:aMoney];
+    XCTAssertEqual(3, [self.walletVc tableView:nil numberOfRowsInSection:0], @"We have two moneys, so We need to have 3 rows ");
+    [self.wallet takeMoney:aMoney];
+    XCTAssertEqual(2, [self.walletVc tableView:nil numberOfRowsInSection:0], @"We have two moneys, so We need to have 3 rows ");
+
 }
 
 @end
